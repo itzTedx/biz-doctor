@@ -8,7 +8,7 @@ import { Button } from "../ui/button";
 
 export function Navbar() {
   return (
-    <nav className="container sticky top-3 flex items-center gap-12 p-4">
+    <nav className="container sticky top-3 flex max-w-fit items-center gap-12 bg-card py-4">
       <Logo />
       <ul className="flex items-center gap-2">
         {NAVLINK.map((nav) => (
