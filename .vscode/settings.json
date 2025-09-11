@@ -19,14 +19,15 @@
     "Embla",
     "esbuild",
     "Foneflip",
+    "NAVLINK",
     "nuqs",
     "orpc",
     "presigner",
+    "setex",
     "sonner",
     "Swapy",
-    "ziron",
     "upserted",
-    "setex",
+    "ziron",
     "zmdeals"
   ],
   "[typescriptreact]": {
