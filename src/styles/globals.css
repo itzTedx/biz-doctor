@@ -7,11 +7,12 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-neue-montreal);
   --font-mono: var(--font-geist-mono);
 
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-background: var(--primary-background);
  
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -51,14 +52,15 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
 
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.3328 0.2202 268.85);
   --primary-foreground: oklch(0.985 0 0);
+  --primary-background: oklch(0.2897 0.0811 286.14);
 
   --secondary: oklch(0.6434 0.2036 39.55);
   --secondary-foreground: oklch(0.205 0 0);
 
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(0.5279 0.0374 288.87);
 
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
@@ -84,7 +86,7 @@
   }
 
   h1, h2, h3, h4, h5, h6, a {
-    @apply -tracking-[0.02em];
+    @apply -tracking-[0.015em];
   }
 }
 
