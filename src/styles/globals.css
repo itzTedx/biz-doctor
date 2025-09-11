@@ -119,8 +119,13 @@
   body {
     @apply bg-background text-foreground;
   }
+  
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed -tracking-[0.02em];
+  }
+
+  h1, h2, h3, h4, h5, h6, a {
+    @apply -tracking-[0.02em];
   }
 }
 
