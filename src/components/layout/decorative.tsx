@@ -4,11 +4,12 @@ interface Props {
   children?: React.ReactNode;
   roundClassName?: string;
   color?: string;
+  className?: string;
 }
 
-export const Decorative = ({ children, roundClassName, color }: Props) => {
+export const Decorative = ({ children, roundClassName, color, className }: Props) => {
   return (
-    <div className="-mt-12">
+    <div className={cn("-mt-12", className)}>
       <div className={cn("h-24 w-full rounded-b-3xl bg-card", color)} />
       <div
         className={cn(

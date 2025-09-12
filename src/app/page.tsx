@@ -139,12 +139,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-primary-background py-12">
-        <Decorative color="bg-background" roundClassName="bg-primary-background" />
-        <div className="container">
-          <Badge>
-            <BadgeDot /> Expert Videos
-          </Badge>
+      <section className="relative overflow-hidden bg-primary-background py-12">
+        <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-background" />
+        <div className="-translate-x-1/2 -top-1/2 absolute left-1/2 size-[46rem] rounded-full bg-radial from-accent/50 to-70% to-primary-background/0" />
+        <div className="container py-12">
+          <div className="relative z-10 grid gap-20 md:grid-cols-3">
+            <Badge>
+              <BadgeDot /> our 4 core pillars
+            </Badge>
+            <h2 className="col-span-2 text-balance font-semibold text-5xl text-card">
+              Empowering your business through specialized consulting.
+            </h2>
+          </div>
         </div>
       </section>
     </main>
