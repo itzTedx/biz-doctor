@@ -57,7 +57,7 @@ export default function Home() {
               <h2 className="text-balance font-semibold text-5xl text-primary">
                 Your Trusted Partner in <span className="font-normal tracking-tight">Business Transformation</span>
               </h2>
-              <p className="max-w-xl text-lg">
+              <p className="max-w-xl text-lg text-muted-foreground">
                 Led by Mr. Saji Thomas, a seasoned financial strategist and visionary leader, BizDoctor combines proven
                 expertise with forward-thinking strategies to solve complex business challenges.
               </p>
