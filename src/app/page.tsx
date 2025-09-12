@@ -5,7 +5,7 @@ import { Badge, BadgeDot } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 import { IconArrowUpRight } from "@/assets/icons/arrow";
-import { AboutPattern } from "@/assets/pattern/about-pattern";
+import { AnimatedAboutPattern } from "@/assets/pattern/animated-about-pattern";
 
 export default function Home() {
   return (
@@ -50,8 +50,8 @@ export default function Home() {
           </p>
         </Decorative>
       </div>
+      {/* <AnimatedBeamDemo /> */}
       <section className="relative py-12">
-        <div className="ml-16 h-px w-9 bg-primary" />
         <div className="container py-12">
           <div className="relative z-10 grid gap-20 md:grid-cols-3">
             <Badge>
@@ -66,7 +66,12 @@ export default function Home() {
                 expertise with forward-thinking strategies to solve complex business challenges.
               </p>
             </div>
-            <div className="aspect-3/4 rounded-xl bg-red-400">{/* <Image src='/images/'/> */}</div>
+            <div className="relative flex aspect-3/4 items-end justify-end rounded-xl bg-card p-4">
+              <Badge className="z-10" variant="secondary">
+                Saji THomas
+              </Badge>
+              <Image alt="Portrait of Mr.Saji Thomas" className="object-cover" fill src="/images/saji-thomas.webp" />
+            </div>
             <div className="col-span-2 grid grid-cols-2 gap-3">
               <div className="group flex flex-col justify-between rounded-xl bg-card p-6">
                 <h3 className="font-semibold text-xl">
@@ -109,7 +114,20 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <AboutPattern className="absolute top-12" />
+        <AnimatedAboutPattern className="absolute top-12" />
+      </section>
+      <section>
+        <div className="container">
+          <Badge>
+            <BadgeDot /> Expert Videos
+          </Badge>
+          <div className="flex items-end justify-between">
+            <div>
+              <h2>Learn, Grow, Transform</h2>
+              <p>Watch expert insights and practical strategies to grow your business.</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
