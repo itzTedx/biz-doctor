@@ -139,6 +139,14 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="bg-primary-background py-12">
+        <Decorative color="bg-background" roundClassName="bg-primary-background" />
+        <div className="container">
+          <Badge>
+            <BadgeDot /> Expert Videos
+          </Badge>
+        </div>
+      </section>
     </main>
   );
 }
