@@ -23,12 +23,12 @@ export function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 py-2.5 max-md:container">
+    <nav className="-translate-x-1/2 fixed top-0 left-1/2 z-50 py-2.5 max-md:container">
       <div className="container relative flex items-center justify-between gap-7 rounded-lg bg-card p-3 md:max-w-fit">
         <Logo />
         <ul className="hidden items-center gap-2 md:flex">
           {NAVLINK.map((nav) => (
-            <li key={nav.href}>
+            <li className="shrink-0 grow" key={nav.href}>
               <Link className="px-3 py-1 font-medium text-sm" href={nav.href}>
                 {nav.label}
               </Link>
