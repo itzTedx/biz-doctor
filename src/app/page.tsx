@@ -126,6 +126,14 @@ export default function Home() {
               <h2>Learn, Grow, Transform</h2>
               <p>Watch expert insights and practical strategies to grow your business.</p>
             </div>
+            <div>
+              <Button className="pr-1" size="lg">
+                Explore all video
+                <div className="flex size-7 items-center justify-center rounded bg-primary-300 text-primary">
+                  <IconArrowUpRight />
+                </div>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
