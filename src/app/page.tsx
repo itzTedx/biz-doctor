@@ -116,18 +116,20 @@ export default function Home() {
         </div>
         <AnimatedAboutPattern className="absolute top-12" />
       </section>
-      <section>
+      <section className="py-9">
         <div className="container">
           <Badge>
             <BadgeDot /> Expert Videos
           </Badge>
-          <div className="flex items-end justify-between">
-            <div>
-              <h2>Learn, Grow, Transform</h2>
-              <p>Watch expert insights and practical strategies to grow your business.</p>
+          <div className="mt-6 flex items-end justify-between">
+            <div className="space-y-3">
+              <h2 className="text-balance font-semibold text-5xl text-primary">Learn, Grow, Transform</h2>
+              <p className="max-w-xl text-lg text-muted-foreground">
+                Watch expert insights and practical strategies to grow your business.
+              </p>
             </div>
             <div>
-              <Button className="pr-1" size="lg">
+              <Button className="gap-3 pr-1.5" size="lg">
                 Explore all video
                 <div className="flex size-7 items-center justify-center rounded bg-primary-300 text-primary">
                   <IconArrowUpRight />
