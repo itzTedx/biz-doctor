@@ -1,11 +1,15 @@
 import Image from "next/image";
 
+import FrameworkAgnostic from "@/components/framework";
 import { Decorative } from "@/components/layout/decorative";
 import { Badge, BadgeDot } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 import { IconArrowUpRight } from "@/assets/icons/arrow";
 import { AnimatedAboutPattern } from "@/assets/pattern/animated-about-pattern";
+
+import { SERVICES } from "@/data/services";
 
 export default function Home() {
   return (
@@ -139,20 +143,54 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative overflow-hidden bg-primary-background py-12">
-        <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-background" />
+      <section className="relative overflow-hidden bg-primary-950 py-12 text-card">
+        <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-950" />
         <div className="-translate-x-1/2 -top-1/2 absolute left-1/2 size-[46rem] rounded-full bg-radial from-accent/50 to-70% to-primary-background/0" />
-        <div className="container py-12">
+        <div className="container space-y-6 py-12">
           <div className="relative z-10 grid gap-20 md:grid-cols-3">
             <Badge>
               <BadgeDot /> our 4 core pillars
             </Badge>
-            <h2 className="col-span-2 text-balance font-semibold text-5xl text-card">
+            <h2 className="col-span-2 text-balance font-semibold text-5xl">
               Empowering your business through specialized consulting.
             </h2>
           </div>
+          <ul className="space-y-12">
+            {SERVICES.map(({ id, tags, title, location, service, items }) => (
+              <li className="space-y-12" key={id}>
+                <Separator />
+                <div className="grid grid-cols-12 gap-4">
+                  <span className="font-mono">{id}</span>
+                  <div className="col-span-10 space-y-4">
+                    <span className="font-mono text-muted-foreground text-xs">{tags}</span>
+                    <div className="grid grid-cols-5 gap-4">
+                      <div className="col-span-2">
+                        <h3 className="text-3xl">{title}</h3>
+                        <p className="text-sm">{location}</p>
+                      </div>
+                      <div className="col-span-3">
+                        <h4>{service}</h4>
+                        <ul>
+                          {items.map((item, index) => (
+                            <li key={`${item}-${index}`}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <Button size="icon">
+                    <IconArrowUpRight />
+                  </Button>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
+        <Decorative className="relative z-10 mt-0" color="bg-background" roundClassName="bg-primary-950">
+          <Button>Talk to an expert</Button>
+        </Decorative>
       </section>
+      <FrameworkAgnostic />
     </main>
   );
 }
