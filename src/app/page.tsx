@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 
 import { IconArrowUpRight } from "@/assets/icons/arrow";
 import { IconExperience } from "@/assets/icons/experience";
+import { IconStar } from "@/assets/icons/star";
 import { AnimatedAboutPattern } from "@/assets/pattern/animated-about-pattern";
 import { CardPattern } from "@/assets/pattern/card-pattern";
 
@@ -294,6 +295,93 @@ export default function Home() {
                 <CardPattern aria-hidden={true} className="absolute top-0" />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      <section className="relative overflow-hidden bg-primary-950 pt-12 text-card">
+        <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-950" />
+        <div className="-translate-x-1/2 -top-1/2 absolute left-1/2 size-[46rem] rounded-full bg-radial from-accent/50 to-70% to-primary-background/0" />
+        <CardPattern aria-hidden={true} className="-translate-x-1/2 absolute top-16 left-1/2 size-[40rem]" />
+        <div className="container space-y-6 py-12">
+          <div className="relative z-10 grid gap-20 md:grid-cols-3">
+            <Badge>
+              <BadgeDot /> On our minds
+            </Badge>
+            <div className="col-span-2 space-y-3">
+              <h2 className="text-balance font-semibold text-5xl">Insights & Strategies</h2>
+              <p className="text-lg text-muted-foreground">
+                Stay ahead with expert insights, practical tips, and actionable strategies
+              </p>
+            </div>
+          </div>
+          <div>5 Strategies to Optimize Your Business Cash Flow</div>
+        </div>
+        <Decorative
+          className="relative z-10 mt-0"
+          color="bg-background"
+          position="down"
+          roundClassName="bg-primary-950"
+        >
+          <Button>Explore more</Button>
+        </Decorative>
+      </section>
+      <section className="container">
+        <div className="space-y-4 text-center">
+          <Badge>
+            <BadgeDot />
+            Success Stories
+          </Badge>
+          <h2 className="font-semibold text-5xl text-primary">
+            Real Success,
+            <br />
+            <span>Authentic Voices</span>
+          </h2>
+        </div>
+        <div className="grid grid-cols-3 gap-8 py-12">
+          <div className="space-y-8 rounded-xl bg-gradient-to-b from-card/20 to-card p-8">
+            <div className="size-12 rounded-full bg-accent" />
+            <div className="space-y-4">
+              <p className="text-xl">
+                “BizDoctor completely transformed our financial strategy. Their team simplified complex processes and
+                helped us achieve consistent growth.”
+              </p>
+              <p className="text-muted-foreground text-sm">Ramesh K., CFO, Manufacturing Company</p>
+            </div>
+            <div className="flex items-center gap-2">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <IconStar className="text-secondary" key={i} />
+              ))}
+            </div>
+          </div>
+          <div className="space-y-8 rounded-xl bg-gradient-to-t from-card/20 to-card p-8">
+            <div className="size-12 rounded-full bg-accent" />
+            <div className="space-y-4">
+              <p className="text-xl">
+                “We were struggling with supply chain inefficiencies until BizDoctor stepped in. Their roadmap improved
+                efficiency and reduced costs by 20%”
+              </p>
+              <p className="text-muted-foreground text-sm">Fatima A., Operations Head, Retail Group</p>
+            </div>
+            <div className="flex items-center gap-2">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <IconStar className="text-secondary" key={i} />
+              ))}
+            </div>
+          </div>
+          <div className="space-y-8 rounded-xl bg-gradient-to-b from-card/20 to-card p-8">
+            <div className="size-12 rounded-full bg-accent" />
+            <div className="space-y-4">
+              <p className="text-xl">
+                What sets BizDoctor apart is their personalized approach. They don’t just consult—they partner with you
+                to make ideas actionable.
+              </p>
+              <p className="text-muted-foreground text-sm">Sanjay P., Founder, Tech Startup</p>
+            </div>
+            <div className="flex items-center gap-2">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <IconStar className="text-secondary" key={i} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
