@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 
+import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 
 import { geistMono, neueMontreal, suisse } from "@/assets/fonts";
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={cn(geistMono.variable, suisse.className, neueMontreal.variable, "antialiased")}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
