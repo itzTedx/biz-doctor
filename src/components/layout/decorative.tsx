@@ -5,28 +5,43 @@ interface Props {
   roundClassName?: string;
   color?: string;
   className?: string;
+  position?: "up" | "down";
 }
 
-export const Decorative = ({ children, roundClassName, color, className }: Props) => {
+export const Decorative = ({ children, roundClassName, color, className, position = "up" }: Props) => {
   return (
     <div className={cn("-mt-12", className)}>
-      <div className={cn("h-24 w-full rounded-b-3xl bg-card", color)} />
+      {position === "up" && <div className={cn("h-24 w-full rounded-b-3xl bg-card", color)} />}
       <div
         className={cn(
-          "relative mx-auto flex h-16 max-w-3xl items-center justify-center gap-3 rounded-b-4xl bg-card",
+          "relative mx-auto flex h-16 max-w-3xl items-center justify-center gap-3 bg-card",
+          position === "down" ? "rounded-t-4xl" : "rounded-b-4xl",
           color
         )}
       >
         {children}
         <div className="absolute right-full h-full w-16">
-          <div className={cn("absolute top-0 right-0 size-1/2 bg-card", color)} />
-          <div className={cn("absolute top-0 right-0 size-full rounded-full bg-background", roundClassName)} />
+          <div className={cn("absolute right-0 size-1/2 bg-card", position === "down" ? "bottom-0" : "top-0", color)} />
+          <div
+            className={cn(
+              "absolute right-0 size-full rounded-full bg-background",
+              position === "down" ? "bottom-0" : "top-0",
+              roundClassName
+            )}
+          />
         </div>
         <div className="absolute left-full h-full w-16">
-          <div className={cn("absolute top-0 left-0 size-1/2 bg-card", color)} />
-          <div className={cn("absolute top-0 right-0 size-full rounded-full bg-background", roundClassName)} />
+          <div className={cn("absolute left-0 size-1/2 bg-card", position === "down" ? "bottom-0" : "top-0", color)} />
+          <div
+            className={cn(
+              "absolute right-0 size-full rounded-full bg-background",
+              position === "down" ? "bottom-0" : "top-0",
+              roundClassName
+            )}
+          />
         </div>
       </div>
+      {position === "down" && <div className={cn("h-24 w-full rounded-t-3xl bg-card", color)} />}
     </div>
   );
 };

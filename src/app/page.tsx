@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import FrameworkAgnostic from "@/components/framework";
 import { Decorative } from "@/components/layout/decorative";
 import { Badge, BadgeDot } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -143,7 +142,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative overflow-hidden bg-primary-950 py-12 text-card">
+      <section className="relative overflow-hidden bg-primary-950 pt-12 text-card">
         <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-950" />
         <div className="-translate-x-1/2 -top-1/2 absolute left-1/2 size-[46rem] rounded-full bg-radial from-accent/50 to-70% to-primary-background/0" />
         <div className="container space-y-6 py-12">
@@ -158,7 +157,7 @@ export default function Home() {
           <ul className="space-y-12">
             {SERVICES.map(({ id, tags, title, location, service, items }) => (
               <li className="space-y-12" key={id}>
-                <Separator />
+                <Separator className="opacity-10" />
                 <div className="grid grid-cols-12 gap-4">
                   <span className="font-mono">{id}</span>
                   <div className="col-span-10 space-y-4">
@@ -186,11 +185,38 @@ export default function Home() {
             ))}
           </ul>
         </div>
-        <Decorative className="relative z-10 mt-0" color="bg-background" roundClassName="bg-primary-950">
+        <Decorative
+          className="relative z-10 mt-0"
+          color="bg-background"
+          position="down"
+          roundClassName="bg-primary-950"
+        >
           <Button>Talk to an expert</Button>
         </Decorative>
       </section>
-      <FrameworkAgnostic />
+      {/* <FrameworkAgnostic /> */}
+      <section className="py-12">
+        <div className="container grid grid-cols-4 gap-3">
+          <Badge>
+            <BadgeDot />
+            Why Choose BizDoctor?
+          </Badge>
+          <div className="col-span-3">
+            <div className="flex items-center gap-1">
+              <Badge variant="secondary">Future-Ready Solutions</Badge>
+              <p>- Future-Ready Solutions</p>
+            </div>
+            <p className="text-4xl">
+              At BizDoctor, we go beyond consultancy - we become your partner in growth. Our team brings decades of
+              expertise, innovative thinking, and proven results to help businesses thrive in today’s competitive
+              landscape.{" "}
+              <span className="text-muted-foreground">
+                Here’s why organizations across India, UAE, and the GCC trust us:
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
