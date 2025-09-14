@@ -12,7 +12,7 @@ import {
 import { IconTrophy } from "@/assets/icons/trophy";
 import { LogoMono } from "@/assets/logo";
 import { CardPattern } from "@/assets/pattern/card-pattern";
-import { FooterLeft } from "@/assets/pattern/footer-pattern";
+import { FooterLeft, FooterRight, FooterUpLeft, FooterUpRight } from "@/assets/pattern/footer-pattern";
 import { LogoZironMedia } from "@/assets/zironmedia-logo";
 
 import { Button } from "../ui/button";
@@ -24,7 +24,7 @@ export const Footer = () => {
       <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-950" />
       <CardPattern aria-hidden={true} className="-translate-x-1/2 absolute top-12 left-1/2 size-[40rem]" />
       <div className="container relative z-10 max-w-7xl px-0">
-        <section className="flex flex-col items-center gap-4 py-20">
+        <section className="flex flex-col items-center gap-4 py-40">
           <h4 className="font-bold text-5xl">Begin Your Growth Journey</h4>
           <ul className="flex items-center gap-5 rounded bg-card/10 px-2.5 py-1.5">
             <li className="flex items-center gap-2">
@@ -45,7 +45,7 @@ export const Footer = () => {
           </p>
           <Button>Talk to Our Experts Today</Button>
         </section>
-        <section className="grid grid-cols-2 gap-4 py-12">
+        <section className="grid grid-cols-2 gap-4 py-16">
           <div className="flex flex-col items-start gap-6">
             <LogoMono />
             <ul className="flex items-center gap-1 rounded-md bg-muted/10 p-1">
@@ -95,7 +95,7 @@ export const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="space-y-6">
+            <div className="shrink-0 space-y-6">
               <h5 className="font-mono font-semibold text-background/80 text-xs tracking-wide">NAVIGATION</h5>
               <ul className="space-y-3">
                 <li>
@@ -137,6 +137,9 @@ export const Footer = () => {
         </section>
       </div>
       <FooterLeft className="absolute bottom-0 left-0" />
+      <FooterRight className="absolute right-0 bottom-0" />
+      <FooterUpRight className="-top-24 absolute right-0" />
+      <FooterUpLeft className="-top-14 absolute left-0" />
     </footer>
   );
 };
