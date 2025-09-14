@@ -8,7 +8,9 @@ import { Separator } from "@/components/ui/separator";
 import { IconArrowUpRight } from "@/assets/icons/arrow";
 import { IconExperience } from "@/assets/icons/experience";
 import { AnimatedAboutPattern } from "@/assets/pattern/animated-about-pattern";
+import { CardPattern } from "@/assets/pattern/card-pattern";
 
+import { HOW_WORKS } from "@/data/how-works";
 import { SERVICES } from "@/data/services";
 
 export default function Home() {
@@ -146,6 +148,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-primary-950 pt-12 text-card">
         <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-950" />
         <div className="-translate-x-1/2 -top-1/2 absolute left-1/2 size-[46rem] rounded-full bg-radial from-accent/50 to-70% to-primary-background/0" />
+        <CardPattern aria-hidden={true} className="-translate-x-1/2 absolute top-16 left-1/2 size-[40rem]" />
         <div className="container space-y-6 py-12">
           <div className="relative z-10 grid gap-20 md:grid-cols-3">
             <Badge>
@@ -162,15 +165,15 @@ export default function Home() {
                 <div className="grid grid-cols-12 gap-4">
                   <span className="font-mono">{id}</span>
                   <div className="col-span-10 space-y-4">
-                    <span className="font-mono text-muted-foreground text-xs">{tags}</span>
+                    <span className="block font-mono text-muted-foreground text-xs">{tags}</span>
                     <div className="grid grid-cols-5 gap-4">
                       <div className="col-span-2">
-                        <h3 className="text-3xl">{title}</h3>
+                        <h3 className="font-semibold text-3xl">{title}</h3>
                         <p className="text-sm">{location}</p>
                       </div>
-                      <div className="col-span-3">
-                        <h4>{service}</h4>
-                        <ul>
+                      <div className="col-span-3 space-y-3">
+                        <h4 className="font-semibold">{service}</h4>
+                        <ul className="list-inside list-disc space-y-3">
                           {items.map((item, index) => (
                             <li key={`${item}-${index}`}>{item}</li>
                           ))}
@@ -185,6 +188,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <Separator className="opacity-10" />
         </div>
         <Decorative
           className="relative z-10 mt-0"
@@ -260,6 +264,36 @@ export default function Home() {
               our all-in-one consulting approach helps you streamline operations, optimize performance, and unlock new
               opportunities seamlessly.
             </p>
+          </div>
+        </div>
+        <div className="container relative z-10 grid gap-20 md:grid-cols-3">
+          <Badge>
+            <BadgeDot /> Your business doctor
+          </Badge>
+          <div className="col-span-2 space-y-4">
+            <h2 className="text-balance font-semibold text-5xl text-primary">
+              We make business consulting{" "}
+              <span className="font-normal tracking-tight">simple, structured, and effective</span>
+            </h2>
+            <p className="max-w-xl text-lg text-muted-foreground">
+              We believe business consulting should be simple, structured, and results-driven. Our approach ensures that
+              every solution we provide is practical, measurable, and aligned with your vision.
+            </p>
+          </div>
+          <div className="col-span-full grid grid-cols-3 gap-4">
+            {HOW_WORKS.map(({ title, description, Illustration }) => (
+              <div
+                className="relative flex flex-col items-center gap-9 overflow-hidden rounded-2xl bg-primary-950 p-9"
+                key={title}
+              >
+                <div className="relative z-10 space-y-3 text-center">
+                  <h3 className="font-medium font-mono text-card text-xl uppercase">{title}</h3>
+                  <p className="text-muted-foreground">{description}</p>
+                </div>
+                <Illustration />
+                <CardPattern aria-hidden={true} className="absolute top-0" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
