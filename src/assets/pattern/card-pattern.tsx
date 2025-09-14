@@ -53,8 +53,8 @@ export const CardPattern = (props: SVGProps) => {
           id="paint0_radial_183_2"
           r="1"
         >
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="white" stopOpacity="0" />
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           cx="0"
@@ -64,8 +64,8 @@ export const CardPattern = (props: SVGProps) => {
           id="paint1_radial_183_2"
           r="1"
         >
-          <stop stop-color="#8600F3" />
-          <stop offset="1" stop-color="#8600F3" stopOpacity="0" />
+          <stop stopColor="#8600F3" />
+          <stop offset="1" stopColor="#8600F3" stopOpacity="0" />
         </radialGradient>
         <image
           height="800"
