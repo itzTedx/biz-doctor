@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Decorative } from "@/components/layout/decorative";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge, BadgeDot } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -11,8 +12,10 @@ import { IconStar } from "@/assets/icons/star";
 import { AnimatedAboutPattern } from "@/assets/pattern/animated-about-pattern";
 import { CardPattern } from "@/assets/pattern/card-pattern";
 
+import { FAQS } from "@/data/faqs";
 import { HOW_WORKS } from "@/data/how-works";
 import { SERVICES } from "@/data/services";
+import { ContactForm } from "@/modules/contact/contact-form";
 
 export default function Home() {
   return (
@@ -382,6 +385,49 @@ export default function Home() {
                 <IconStar className="text-secondary" key={i} />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-12">
+        <div className="container grid grid-cols-12 gap-4">
+          <div className="col-span-5 space-y-6">
+            <Badge>
+              <BadgeDot />
+              Frequently Asked Questions
+            </Badge>
+            <div>
+              <h2 className="font-semibold text-5xl text-primary">Questions & Answer</h2>
+              <p className="text-lg text-muted-foreground">Can't find what you're looking for?</p>
+            </div>
+            <Button>Contact us</Button>
+          </div>
+          <div className="col-span-7">
+            <Accordion className="w-full" collapsible defaultValue="item-1" type="single">
+              {FAQS.map((faq) => (
+                <AccordionItem key={faq.id} value={faq.id}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent className="flex flex-col gap-4 text-balance">
+                    <p>{faq.content}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+      <section className="py-12">
+        <div className="container grid grid-cols-2 gap-4">
+          <div className="space-y-6">
+            <Badge>
+              <BadgeDot />
+              How We Work
+            </Badge>
+
+            <h2 className="font-semibold text-5xl text-primary">Let’s Talk Growth</h2>
+          </div>
+          <div className="rounded-2xl bg-primary-950 p-16 text-background">
+            <h3 className="font-semibold text-5xl">Get in Touch</h3>
+            <ContactForm />
           </div>
         </div>
       </section>
