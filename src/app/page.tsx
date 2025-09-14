@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 import { IconArrowUpRight } from "@/assets/icons/arrow";
+import { IconExperience } from "@/assets/icons/experience";
 import { AnimatedAboutPattern } from "@/assets/pattern/animated-about-pattern";
 
 import { SERVICES } from "@/data/services";
@@ -195,7 +196,7 @@ export default function Home() {
         </Decorative>
       </section>
       {/* <FrameworkAgnostic /> */}
-      <section className="py-12">
+      <section className="space-y-28 py-12">
         <div className="container grid grid-cols-4 gap-3">
           <Badge>
             <BadgeDot />
@@ -204,7 +205,7 @@ export default function Home() {
           <div className="col-span-3">
             <div className="flex items-center gap-1">
               <Badge variant="secondary">Future-Ready Solutions</Badge>
-              <p>- Future-Ready Solutions</p>
+              <p>- Built by trust, Driven by Results</p>
             </div>
             <p className="text-4xl">
               At BizDoctor, we go beyond consultancy - we become your partner in growth. Our team brings decades of
@@ -213,6 +214,51 @@ export default function Home() {
               <span className="text-muted-foreground">
                 Here’s why organizations across India, UAE, and the GCC trust us:
               </span>
+            </p>
+          </div>
+        </div>
+        <div className="container grid max-w-7xl grid-cols-2 items-center gap-16">
+          <ul className="space-y-3">
+            <li className="flex items-center justify-between rounded-3xl bg-linear-140 from-40% from-background to-110% to-primary-600 p-8">
+              <div>
+                <p className="font-medium font-mono text-5xl text-primary leading-none">30+</p>
+                <h3 className="font-light text-muted-foreground">Years of Experience in business</h3>
+              </div>
+              <div className="flex size-20 shrink-0 items-center justify-center rounded-full bg-radial-[at_50%_0%] from-background to-background/0 text-primary shadow-[0_-2.5px_4px_0_oklch(1_0_0_/_15%)_inset]">
+                <IconExperience />
+              </div>
+            </li>
+            <li className="-bg-linear-140 flex items-center justify-between rounded-3xl from-40% from-background to-110% to-primary-600 p-8">
+              <div className="flex size-20 shrink-0 items-center justify-center rounded-full bg-radial-[at_50%_0%] from-background to-background/0 text-primary shadow-[0_-2.5px_4px_0_oklch(1_0_0_/_15%)_inset]">
+                <IconExperience />
+              </div>
+              <div>
+                <p className="text-end font-medium font-mono text-5xl text-primary leading-none">2,500+</p>
+                <h3 className="font-light text-muted-foreground">Businesses Served across global</h3>
+              </div>
+            </li>
+            <li className="flex items-center justify-between rounded-3xl bg-linear-140 from-40% from-background to-110% to-primary-600 p-8">
+              <div>
+                <p className="font-medium font-mono text-5xl text-primary leading-none">150+</p>
+                <h3 className="font-light text-muted-foreground">Corporate Training Programs Delivered</h3>
+              </div>
+              <div className="flex size-20 shrink-0 items-center justify-center rounded-full bg-radial-[at_50%_0%] from-background to-background/0 text-primary shadow-[0_-2.5px_4px_0_oklch(1_0_0_/_15%)_inset]">
+                <IconExperience />
+              </div>
+            </li>
+          </ul>
+          <div className="space-y-6">
+            <div className="flex items-center gap-1">
+              <Badge variant="secondary">we’re more than just consultants</Badge>
+              <p>- we’re your growth partners.</p>
+            </div>
+            <h3 className="font-semibold text-3xl text-primary">
+              Trusted by 2,500+ Professionals and Businesses across India, UAE, and the GCC.
+            </h3>
+            <p className="text-lg">
+              We deliver strategies that drive measurable success. From finance and HR to marketing and supply chain,
+              our all-in-one consulting approach helps you streamline operations, optimize performance, and unlock new
+              opportunities seamlessly.
             </p>
           </div>
         </div>
