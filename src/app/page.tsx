@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { IconArrowUpRight } from "@/assets/icons/arrow";
 import { IconExperience } from "@/assets/icons/experience";
 import { IconStar } from "@/assets/icons/star";
+import { AboutRive } from "@/assets/pattern/about-rive";
 import { AnimatedAboutPattern } from "@/assets/pattern/animated-about-pattern";
 import { CardPattern } from "@/assets/pattern/card-pattern";
 
@@ -60,6 +61,7 @@ export default function Home() {
           </p>
         </Decorative>
       </div>
+
       {/* <AnimatedBeamDemo /> */}
       <section className="relative py-12">
         <div className="container py-12">
@@ -124,6 +126,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
         <AnimatedAboutPattern className="absolute top-12" />
       </section>
       <section className="py-9">
@@ -204,8 +207,8 @@ export default function Home() {
         </Decorative>
       </section>
       {/* <FrameworkAgnostic /> */}
-      <section className="space-y-28 py-12">
-        <div className="container grid grid-cols-4 gap-3">
+      <section className="relative space-y-28 py-12">
+        <div className="container relative z-10 grid grid-cols-4 gap-3">
           <Badge>
             <BadgeDot />
             Why Choose BizDoctor?
@@ -225,7 +228,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="container grid max-w-7xl grid-cols-2 items-center gap-16">
+        <div className="container relative z-10 grid max-w-7xl grid-cols-2 items-center gap-16">
           <ul className="space-y-3">
             <li className="flex items-center justify-between rounded-3xl bg-linear-140 from-40% from-background to-110% to-primary-600 p-8">
               <div>
@@ -300,6 +303,8 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+        <AboutRive />
       </section>
       <section className="relative overflow-hidden bg-primary-950 pt-12 text-card">
         <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-950" />

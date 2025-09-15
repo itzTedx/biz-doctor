@@ -23,6 +23,9 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.2.3
         version: 1.2.3(@types/react@19.1.12)(react@19.1.0)
+      '@rive-app/react-canvas':
+        specifier: ^4.23.3
+        version: 4.23.3(react@19.1.0)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -513,6 +516,14 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
+
+  '@rive-app/canvas@2.31.5':
+    resolution: {integrity: sha512-rVWN1RHM7nflvmJCOhrN/Q3d2Sasf8/J8EhArxB7/rFvby/96AREwkXlmKAMxgar8PzN9hyCKyanY5TmPAPd9A==}
+
+  '@rive-app/react-canvas@4.23.3':
+    resolution: {integrity: sha512-qvy896Joes4w1yTMo8BPdF2JfPKZ5rawGy0JEX2UXFM5VjMHc/NG46BIbdnBrk9ozX/HQ2uRWTp4hNkybJzgSQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0
 
   '@standard-schema/utils@0.3.0':
     resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
@@ -1251,6 +1262,13 @@ snapshots:
       react: 19.1.0
     optionalDependencies:
       '@types/react': 19.1.12
+
+  '@rive-app/canvas@2.31.5': {}
+
+  '@rive-app/react-canvas@4.23.3(react@19.1.0)':
+    dependencies:
+      '@rive-app/canvas': 2.31.5
+      react: 19.1.0
 
   '@standard-schema/utils@0.3.0': {}
 
