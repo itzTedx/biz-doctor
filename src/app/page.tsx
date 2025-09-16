@@ -5,6 +5,16 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Badge, BadgeDot } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import {
+  Stories,
+  StoriesContent,
+  Story,
+  StoryAuthor,
+  StoryAuthorImage,
+  StoryAuthorName,
+  StoryOverlay,
+  StoryVideo,
+} from "@/components/ui/stories";
 
 import { IconArrowUpRight } from "@/assets/icons/arrow";
 import { IconExperience } from "@/assets/icons/experience";
@@ -16,6 +26,7 @@ import { CardPattern } from "@/assets/pattern/card-pattern";
 import { FAQS } from "@/data/faqs";
 import { HOW_WORKS } from "@/data/how-works";
 import { SERVICES } from "@/data/services";
+import { stories } from "@/data/stories";
 import { ContactForm } from "@/modules/contact/contact-form";
 
 export default function Home() {
@@ -134,7 +145,7 @@ export default function Home() {
           <Badge>
             <BadgeDot /> Expert Videos
           </Badge>
-          <div className="mt-6 flex items-end justify-between">
+          <div className="mt-6 mb-12 flex items-end justify-between">
             <div className="space-y-3">
               <h2 className="text-balance font-semibold text-5xl text-primary">Learn, Grow, Transform</h2>
               <p className="max-w-xl text-lg text-muted-foreground">
@@ -150,8 +161,24 @@ export default function Home() {
               </Button>
             </div>
           </div>
+
+          <Stories className="w-full">
+            <StoriesContent className="w-full gap-48">
+              {stories.map((story) => (
+                <Story className="aspect-3/4 w-48" key={story.id}>
+                  <StoryVideo src={story.video} />
+                  <StoryOverlay />
+                  <StoryAuthor>
+                    <StoryAuthorImage fallback={story.fallback} name={story.author} src={story.avatar} />
+                    <StoryAuthorName>{story.author}</StoryAuthorName>
+                  </StoryAuthor>
+                </Story>
+              ))}
+            </StoriesContent>
+          </Stories>
         </div>
       </section>
+
       <section className="relative overflow-hidden bg-primary-950 pt-12 text-card">
         <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-950" />
         <div className="-translate-x-1/2 -top-1/2 absolute left-1/2 size-[46rem] rounded-full bg-radial from-accent/50 to-70% to-primary-background/0" />
