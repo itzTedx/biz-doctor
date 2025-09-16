@@ -11,18 +11,18 @@ import {
 } from "@/assets/icons/socials";
 import { IconTrophy } from "@/assets/icons/trophy";
 import { LogoMono } from "@/assets/logo";
-import { CardPattern } from "@/assets/pattern/card-pattern";
 import { FooterLeft, FooterRight, FooterUpLeft, FooterUpRight } from "@/assets/pattern/footer-pattern";
 import { LogoZironMedia } from "@/assets/zironmedia-logo";
 
 import { Button } from "../ui/button";
+import { FlickeringGrid } from "../ui/flicker-grid";
 import { Decorative } from "./decorative";
 
 export const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-primary-950 text-background">
       <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-950" />
-      <CardPattern aria-hidden={true} className="-translate-x-1/2 absolute top-12 left-1/2 size-[40rem]" />
+      {/* <CardPattern aria-hidden={true} className="-translate-x-1/2 absolute top-12 left-1/2 size-[40rem]" /> */}
       <div className="container relative z-10 max-w-7xl px-0">
         <section className="flex flex-col items-center gap-4 py-40">
           <h4 className="font-bold text-5xl">Begin Your Growth Journey</h4>
@@ -140,6 +140,19 @@ export const Footer = () => {
       <FooterRight className="absolute right-0 bottom-0" />
       <FooterUpRight className="-top-24 absolute right-0" />
       <FooterUpLeft className="-top-14 absolute left-0" />
+      <div className="absolute top-0 left-0 size-[600px] w-full">
+        <FlickeringGrid
+          className="inset-0 z-1 [mask-image:radial-gradient(450px_circle_at_top,white,transparent)]"
+          color="#8c86f9"
+          flickerChance={0.1}
+          gridGap={4}
+          height={600}
+          maxOpacity={0.5}
+          squareSize={2}
+          width={1920}
+        />
+      </div>
+      <div className="-translate-1/2 absolute inset-0 top-0 left-1/2 z-0 size-[42rem] rounded-full bg-radial from-accent/50 to-80% to-primary-background/60 opacity-60 blur-3xl" />
     </footer>
   );
 };

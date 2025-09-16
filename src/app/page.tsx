@@ -1,10 +1,13 @@
+import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 import { Decorative } from "@/components/layout/decorative";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge, BadgeDot } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { FlickeringGrid } from "@/components/ui/flicker-grid";
 import { Separator } from "@/components/ui/separator";
 import {
   Stories,
@@ -25,12 +28,20 @@ import { IconStar } from "@/assets/icons/star";
 import { AboutRive } from "@/assets/pattern/about-rive";
 import { AnimatedAboutPattern } from "@/assets/pattern/animated-about-pattern";
 import { CardPattern } from "@/assets/pattern/card-pattern";
+import { ContactPattern } from "@/assets/pattern/contact-pattern";
 
 import { FAQS } from "@/data/faqs";
 import { HOW_WORKS } from "@/data/how-works";
 import { SERVICES } from "@/data/services";
 import { stories } from "@/data/stories";
 import { ContactForm } from "@/modules/contact/contact-form";
+
+const ROUTES = {
+  contact: "/contact" as Route,
+  services: "/services" as Route,
+  videos: "/videos" as Route,
+  insights: "/insights" as Route,
+} as const;
 
 export default function Home() {
   return (
@@ -47,8 +58,16 @@ export default function Home() {
               growth strategies across industries.
             </p>
             <div className="mx-auto mt-6 flex w-fit items-center gap-3">
-              <Button>Book a Free Consultation</Button>
-              <Button variant="outline">Our Services</Button>
+              <Button asChild>
+                <Link aria-label="Book a free consultation with BizDoctor" href={ROUTES.contact}>
+                  Book a Free Consultation
+                </Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link aria-label="Browse BizDoctor services" href={ROUTES.services}>
+                  Our Services
+                </Link>
+              </Button>
             </div>
             <Image alt="Hero" height={246} src="/images/background/hero-bizdoctor.svg" width={1052} />
           </div>
@@ -94,7 +113,7 @@ export default function Home() {
             </div>
             <div className="relative flex aspect-3/4 items-end justify-end rounded-xl bg-card p-4">
               <Badge className="z-10" variant="secondary">
-                Saji THomas
+                Saji Thomas
               </Badge>
               <Image alt="Portrait of Mr.Saji Thomas" className="object-cover" fill src="/images/saji-thomas.webp" />
             </div>
@@ -156,11 +175,13 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <Button className="gap-3 pr-1.5" size="lg">
-                Explore all video
-                <div className="flex size-7 items-center justify-center rounded bg-primary-300 text-primary">
-                  <IconArrowUpRight />
-                </div>
+              <Button asChild className="gap-3 pr-1.5" size="lg">
+                <Link aria-label="Explore all BizDoctor videos" href={ROUTES.videos}>
+                  Explore all video
+                  <div className="flex size-7 items-center justify-center rounded bg-primary-300 text-primary">
+                    <IconArrowUpRight />
+                  </div>
+                </Link>
               </Button>
             </div>
           </div>
@@ -218,8 +239,10 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <Button size="icon">
-                    <IconArrowUpRight />
+                  <Button asChild size="icon">
+                    <Link aria-label={`Learn more about ${title}`} href={ROUTES.services}>
+                      <IconArrowUpRight />
+                    </Link>
                   </Button>
                 </div>
               </li>
@@ -233,7 +256,11 @@ export default function Home() {
           position="down"
           roundClassName="bg-primary-950"
         >
-          <Button>Talk to an expert</Button>
+          <Button asChild>
+            <Link aria-label="Talk to a BizDoctor expert" href={ROUTES.contact}>
+              Talk to an expert
+            </Link>
+          </Button>
         </Decorative>
       </section>
       {/* <FrameworkAgnostic /> */}
@@ -360,7 +387,11 @@ export default function Home() {
           position="down"
           roundClassName="bg-primary-950"
         >
-          <Button>Explore more</Button>
+          <Button asChild>
+            <Link aria-label="Explore more BizDoctor insights" href={ROUTES.insights}>
+              Explore more
+            </Link>
+          </Button>
         </Decorative>
       </section>
       <section className="container">
@@ -434,7 +465,11 @@ export default function Home() {
               <h2 className="font-semibold text-5xl text-primary">Questions & Answer</h2>
               <p className="text-lg text-muted-foreground">Can't find what you're looking for?</p>
             </div>
-            <Button>Contact us</Button>
+            <Button asChild>
+              <Link aria-label="Contact BizDoctor support" href={ROUTES.contact}>
+                Contact us
+              </Link>
+            </Button>
           </div>
           <div className="col-span-7">
             <Accordion className="w-full" collapsible defaultValue="item-1" type="single">
@@ -480,12 +515,44 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="rounded-2xl bg-primary-950 p-16 text-background">
-            <h3 className="font-semibold text-5xl">Get in Touch</h3>
+          <div className="relative space-y-8 overflow-hidden rounded-2xl bg-primary-950 p-20 text-background">
+            <ContactPattern className="pointer-events-none absolute top-0 right-0 z-0 select-none" />
+            <h3 className="relative z-10 font-semibold text-5xl">Get in Touch</h3>
             <ContactForm />
+            <div className="absolute top-0 left-0 size-[672px] w-full">
+              <FlickeringGrid
+                className="inset-0 z-1 [mask-image:radial-gradient(250px_circle_at_top,white,transparent)]"
+                color="#8c86f9"
+                flickerChance={0.1}
+                gridGap={3}
+                height={600}
+                maxOpacity={0.3}
+                squareSize={2}
+                width={1920}
+              />
+            </div>
           </div>
         </div>
       </section>
+      <Script id="org-jsonld" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "BizDoctor",
+          url: "https://www.bizdoctor.com/",
+          logo: "https://www.bizdoctor.com/images/logo.png",
+          sameAs: ["https://www.linkedin.com/company/bizdoctor", "https://x.com/bizdoctor"],
+          contactPoint: [
+            {
+              "@type": "ContactPoint",
+              telephone: "+971541234567",
+              contactType: "customer support",
+              areaServed: ["IN", "AE", "SA", "OM", "QA", "KW", "BH"],
+              availableLanguage: ["en"],
+            },
+          ],
+        })}
+      </Script>
     </main>
   );
 }

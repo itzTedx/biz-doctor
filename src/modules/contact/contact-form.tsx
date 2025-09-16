@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 import { Button } from "@/components/ui/button";
+import { FlickeringGrid } from "@/components/ui/flicker-grid";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -33,7 +34,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
+      <form className="relative z-10 space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
         <div className="space-y-6">
           <FormField
             control={form.control}
@@ -114,6 +115,16 @@ export function ContactForm() {
           <div className="flex size-8 items-center justify-center rounded bg-primary-300 text-primary-950">
             <IconArrowUpRight />
           </div>
+          <FlickeringGrid
+            className="absolute inset-0 z-1 [mask-image:radial-gradient(120px_24px_at_top,white,transparent)]"
+            color="#8c86f9"
+            flickerChance={0.1}
+            gridGap={3}
+            height={600}
+            maxOpacity={0.5}
+            squareSize={2}
+            width={400}
+          />
         </Button>
       </form>
     </Form>

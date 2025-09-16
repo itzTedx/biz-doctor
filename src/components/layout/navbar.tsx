@@ -10,6 +10,7 @@ import { Logo } from "@/assets/logo";
 import { NAVLINK } from "@/data/links";
 
 import { Button } from "../ui/button";
+import { FlickeringGrid } from "../ui/flicker-grid";
 
 export function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -24,20 +25,32 @@ export function Navbar() {
 
   return (
     <nav className="-translate-x-1/2 fixed top-0 left-1/2 z-50 py-2.5 max-md:container">
-      <div className="container relative flex items-center justify-between gap-7 rounded-lg bg-card p-3 md:max-w-fit">
-        <Logo />
-        <ul className="hidden items-center gap-2 md:flex">
+      <div className="relative flex items-center justify-between rounded-lg bg-card p-3">
+        <Logo className="shrink-0" />
+        <ul className="hidden shrink-0 items-center gap-2 md:flex">
           {NAVLINK.map((nav) => (
-            <li className="shrink-0 grow" key={nav.href}>
+            <li key={nav.href}>
               <Link className="px-3 py-1 font-medium text-sm" href={nav.href}>
                 {nav.label}
               </Link>
             </li>
           ))}
         </ul>
-        <div className="hidden md:block">
-          <Button>Get Consultation</Button>
-        </div>
+
+        <Button className="hidden shrink-0 grow md:block">
+          Get Consultation
+          <FlickeringGrid
+            className="absolute inset-0 z-1 [mask-image:radial-gradient(120px_24px_at_top,white,transparent)]"
+            color="#8c86f9"
+            flickerChance={0.1}
+            gridGap={3}
+            height={600}
+            maxOpacity={0.3}
+            squareSize={2}
+            width={400}
+          />
+        </Button>
+
         <Button
           aria-expanded={isMobileOpen}
           aria-label={isMobileOpen ? "Close menu" : "Open menu"}
