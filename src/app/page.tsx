@@ -117,7 +117,7 @@ export default function Home() {
               </Badge>
               <Image alt="Portrait of Mr.Saji Thomas" className="object-cover" fill src="/images/saji-thomas.webp" />
             </div>
-            <div className="col-span-2 grid grid-cols-2 gap-3">
+            <div className="col-span-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <div className="group flex flex-col justify-between rounded-xl bg-card p-6">
                 <h3 className="font-semibold text-xl">
                   Strategic Smart <br />
@@ -220,16 +220,16 @@ export default function Home() {
             {SERVICES.map(({ id, tags, title, location, service, items }) => (
               <li className="space-y-12" key={id}>
                 <Separator className="opacity-10" />
-                <div className="grid grid-cols-12 gap-4">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
                   <span className="font-mono">{id}</span>
-                  <div className="col-span-10 space-y-4">
+                  <div className="space-y-4 md:col-span-10">
                     <span className="block font-mono text-muted-foreground text-xs">{tags}</span>
-                    <div className="grid grid-cols-5 gap-4">
-                      <div className="col-span-2">
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-5">
+                      <div className="sm:col-span-2">
                         <h3 className="font-semibold text-3xl">{title}</h3>
                         <p className="text-sm">{location}</p>
                       </div>
-                      <div className="col-span-3 space-y-3">
+                      <div className="space-y-3 sm:col-span-3">
                         <h4 className="font-semibold">{service}</h4>
                         <ul className="list-inside list-disc space-y-3">
                           {items.map((item, index) => (
@@ -265,12 +265,12 @@ export default function Home() {
       </section>
       {/* <FrameworkAgnostic /> */}
       <section className="relative space-y-28 py-12">
-        <div className="container relative z-10 grid grid-cols-4 gap-3">
+        <div className="container relative z-10 grid grid-cols-1 gap-3 md:grid-cols-4">
           <Badge>
             <BadgeDot />
             Why Choose BizDoctor?
           </Badge>
-          <div className="col-span-3">
+          <div className="md:col-span-3">
             <div className="flex items-center gap-1">
               <Badge variant="secondary">Future-Ready Solutions</Badge>
               <p>- Built by trust, Driven by Results</p>
@@ -285,7 +285,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="container relative z-10 grid max-w-7xl grid-cols-2 items-center gap-16">
+        <div className="container relative z-10 grid max-w-7xl grid-cols-1 items-center gap-16 md:grid-cols-2">
           <ul className="space-y-3">
             <li className="flex items-center justify-between rounded-3xl bg-linear-140 from-40% from-background to-110% to-primary-600 p-8">
               <div>
@@ -344,7 +344,7 @@ export default function Home() {
               every solution we provide is practical, measurable, and aligned with your vision.
             </p>
           </div>
-          <div className="col-span-full grid grid-cols-3 gap-4">
+          <div className="col-span-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {HOW_WORKS.map(({ title, description, Illustration }) => (
               <div
                 className="relative flex flex-col items-center gap-9 overflow-hidden rounded-2xl bg-primary-950 p-9"
@@ -406,7 +406,7 @@ export default function Home() {
             <span>Authentic Voices</span>
           </h2>
         </div>
-        <div className="grid grid-cols-3 gap-8 py-20">
+        <div className="grid grid-cols-1 gap-8 py-20 md:grid-cols-3">
           <div className="space-y-8 rounded-xl bg-gradient-to-b from-card/20 to-card p-8">
             <div className="size-12 rounded-full bg-accent" />
             <div className="space-y-4">
@@ -455,8 +455,8 @@ export default function Home() {
         </div>
       </section>
       <section className="py-20">
-        <div className="container grid grid-cols-12 gap-4">
-          <div className="col-span-5 space-y-6">
+        <div className="container grid grid-cols-1 gap-4 lg:grid-cols-12">
+          <div className="space-y-6 lg:col-span-5">
             <Badge>
               <BadgeDot />
               Frequently Asked Questions
@@ -471,7 +471,7 @@ export default function Home() {
               </Link>
             </Button>
           </div>
-          <div className="col-span-7">
+          <div className="lg:col-span-7">
             <Accordion className="w-full" collapsible defaultValue="item-1" type="single">
               {FAQS.map((faq) => (
                 <AccordionItem className="[data-state=open]:bg-card" key={faq.id} value={faq.id}>
@@ -486,7 +486,7 @@ export default function Home() {
         </div>
       </section>
       <section className="py-20">
-        <div className="container grid grid-cols-2 gap-12">
+        <div className="container grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div className="flex flex-col justify-between py-6">
             <div className="space-y-6">
               <Badge>
@@ -515,9 +515,9 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="relative space-y-8 overflow-hidden rounded-2xl bg-primary-950 p-20 text-background">
+          <div className="relative space-y-8 overflow-hidden rounded-2xl bg-primary-950 p-6 text-background sm:p-12 lg:p-20">
             <ContactPattern className="pointer-events-none absolute top-0 right-0 z-0 select-none" />
-            <h3 className="relative z-10 font-semibold text-5xl">Get in Touch</h3>
+            <h3 className="relative z-10 font-semibold text-3xl sm:text-4xl lg:text-5xl">Get in Touch</h3>
             <ContactForm />
             <div className="absolute top-0 left-0 size-[672px] w-full">
               <FlickeringGrid
