@@ -11,7 +11,7 @@ interface Props {
 export const Decorative = ({ children, roundClassName, color, className, position = "up" }: Props) => {
   return (
     <div className={cn("-mt-12", className)}>
-      {position === "up" && <div className={cn("h-24 w-full bg-card md:rounded-b-3xl", color)} />}
+      {position === "up" && <div className={cn("w-full bg-card md:h-24 md:rounded-b-3xl", color)} />}
       <div
         className={cn(
           "relative mx-auto flex h-16 max-w-3xl items-center justify-center gap-3 bg-card",
@@ -41,7 +41,7 @@ export const Decorative = ({ children, roundClassName, color, className, positio
           />
         </div>
       </div>
-      {position === "down" && <div className={cn("h-24 w-full bg-card md:rounded-t-3xl", color)} />}
+      {position === "down" && <div className={cn("w-full bg-card md:h-24 md:rounded-t-3xl", color)} />}
     </div>
   );
 };

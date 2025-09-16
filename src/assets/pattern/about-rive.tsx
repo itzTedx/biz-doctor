@@ -10,5 +10,5 @@ export const AboutRive = () => {
       fit: Fit.Layout,
     }),
   });
-  return <RiveComponent className="absolute top-0 left-0 h-[670px] w-[395px]" />;
+  return <RiveComponent className="absolute top-0 left-0 hidden h-[670px] w-[395px] md:block" />;
 };
