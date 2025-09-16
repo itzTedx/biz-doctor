@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { Decorative } from "@/components/layout/decorative";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -18,6 +19,8 @@ import {
 
 import { IconArrowUpRight } from "@/assets/icons/arrow";
 import { IconExperience } from "@/assets/icons/experience";
+import { IconPhone } from "@/assets/icons/phone";
+import { IconEmail } from "@/assets/icons/socials";
 import { IconStar } from "@/assets/icons/star";
 import { AboutRive } from "@/assets/pattern/about-rive";
 import { AnimatedAboutPattern } from "@/assets/pattern/animated-about-pattern";
@@ -372,7 +375,7 @@ export default function Home() {
             <span>Authentic Voices</span>
           </h2>
         </div>
-        <div className="grid grid-cols-3 gap-8 py-12">
+        <div className="grid grid-cols-3 gap-8 py-20">
           <div className="space-y-8 rounded-xl bg-gradient-to-b from-card/20 to-card p-8">
             <div className="size-12 rounded-full bg-accent" />
             <div className="space-y-4">
@@ -420,7 +423,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-12">
+      <section className="py-20">
         <div className="container grid grid-cols-12 gap-4">
           <div className="col-span-5 space-y-6">
             <Badge>
@@ -436,7 +439,7 @@ export default function Home() {
           <div className="col-span-7">
             <Accordion className="w-full" collapsible defaultValue="item-1" type="single">
               {FAQS.map((faq) => (
-                <AccordionItem key={faq.id} value={faq.id}>
+                <AccordionItem className="[data-state=open]:bg-card" key={faq.id} value={faq.id}>
                   <AccordionTrigger>{faq.question}</AccordionTrigger>
                   <AccordionContent className="flex flex-col gap-4 text-balance">
                     <p>{faq.content}</p>
@@ -447,15 +450,35 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-12">
-        <div className="container grid grid-cols-2 gap-4">
-          <div className="space-y-6">
-            <Badge>
-              <BadgeDot />
-              How We Work
-            </Badge>
+      <section className="py-20">
+        <div className="container grid grid-cols-2 gap-12">
+          <div className="flex flex-col justify-between py-6">
+            <div className="space-y-6">
+              <Badge>
+                <BadgeDot />
+                How We Work
+              </Badge>
 
-            <h2 className="font-semibold text-5xl text-primary">Let’s Talk Growth</h2>
+              <h2 className="font-semibold text-5xl text-primary">Let’s Talk Growth</h2>
+            </div>
+            <div className="space-y-3">
+              <ul className="flex w-fit items-center gap-1.5 rounded-md bg-card p-1.5">
+                <li className="flex size-9 items-center justify-center rounded bg-background text-muted-500">
+                  <Link href="tel:+971 54 123 4567">
+                    <IconPhone />
+                  </Link>
+                </li>
+                <li className="flex size-9 items-center justify-center rounded bg-background text-muted-500">
+                  <Link href="mailto:info@bizdoctor.com">
+                    <IconEmail />
+                  </Link>
+                </li>
+              </ul>
+              <p className="max-w-lg font-semibold text-lg text-muted-foreground leading-relaxed">
+                Your next big step starts with a conversation. Whether you’re looking for HR solutions, financial
+                consultancy, or business transformation, our experts are here to guide you.
+              </p>
+            </div>
           </div>
           <div className="rounded-2xl bg-primary-950 p-16 text-background">
             <h3 className="font-semibold text-5xl">Get in Touch</h3>

@@ -8,6 +8,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
+import { IconArrowUpRight } from "@/assets/icons/arrow";
+
 import { ContactFormType, contactSchema } from "./schema";
 
 export function ContactForm() {
@@ -32,87 +34,86 @@ export function ContactForm() {
   return (
     <Form {...form}>
       <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel required>Name</FormLabel>
-              <FormControl>
-                <Input placeholder="your name" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel required>Name</FormLabel>
-              <FormControl>
-                <Input placeholder="your name" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel required>Email Address</FormLabel>
-              <FormControl>
-                <Input placeholder="We’ll reply here" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="phone"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Phone Number</FormLabel>
-              <FormControl>
-                <Input placeholder="+971 58 765 4321" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="subject"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel required>Subject</FormLabel>
-              <FormControl>
-                <Input placeholder="+971 58 765 4321" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel required>Message</FormLabel>
-              <FormControl>
-                <Textarea placeholder="Share your goals or questions with our experts…" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <p>We respect your privacy and will never share your information.</p>
-        <Button size="lg" type="submit">
+        <div className="space-y-6">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel required>Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Your name" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel required>Email Address</FormLabel>
+                <FormControl>
+                  <Input placeholder="We’ll reply here" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone Number</FormLabel>
+                <FormControl>
+                  <Input placeholder="+971 58 765 4321" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="subject"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel required>Subject</FormLabel>
+                <FormControl>
+                  <Input placeholder="+971 58 765 4321" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel required>Message</FormLabel>
+                <FormControl>
+                  <Textarea
+                    className="min-h-[12ch]"
+                    placeholder="Share your goals or questions with our experts…"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <p className="font-light text-muted-500 text-sm">
+            We respect your privacy and will never share your information.
+          </p>
+        </div>
+        <Button className="h-12 gap-3 pr-2" size="lg" type="submit">
           Send Message
+          <div className="flex size-8 items-center justify-center rounded bg-primary-300 text-primary-950">
+            <IconArrowUpRight />
+          </div>
         </Button>
       </form>
     </Form>
