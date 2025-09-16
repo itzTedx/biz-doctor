@@ -1,4 +1,5 @@
 import { Badge, BadgeDot } from "@/components/ui/badge";
+import { NumberCounter } from "@/components/ui/number-counter";
 
 import { IconCommunity } from "@/assets/icons/community";
 import { IconExperience } from "@/assets/icons/experience";
@@ -36,10 +37,12 @@ export const WhyChoose = () => {
       </div>
       <div className="container relative z-10 grid max-w-7xl grid-cols-1 items-center gap-10 sm:gap-12 md:grid-cols-2 md:gap-16">
         <ul className="space-y-4 sm:space-y-5">
-          <li className="flex items-center justify-between rounded-3xl bg-linear-140 from-40% from-background to-110% to-primary-600 p-6 sm:p-7 md:p-8">
+          <li className="flex items-center justify-between rounded-3xl bg-linear-140 from-50% from-background to-120% to-primary-600 p-6 sm:p-7 md:from-40% md:to-110% md:p-8">
             <div>
               <p className="font-medium font-mono text-4xl text-primary leading-none sm:text-5xl">
-                <strong>30+</strong>
+                <strong>
+                  <NumberCounter suffix="+" value={30} />
+                </strong>
               </p>
               <h3 className="font-light text-muted-foreground text-sm sm:text-base">Years of experience in business</h3>
             </div>
@@ -50,7 +53,7 @@ export const WhyChoose = () => {
               <IconExperience className="size-10 md:size-12" />
             </div>
           </li>
-          <li className="-bg-linear-140 flex items-center justify-between rounded-3xl from-40% from-background to-110% to-primary-600 p-6 sm:p-7 md:p-8">
+          <li className="-bg-linear-140 flex items-center justify-between rounded-3xl from-50% from-background to-120% to-primary-600 p-6 sm:p-7 md:from-40% md:to-110% md:p-8">
             <div
               aria-hidden
               className="flex size-16 shrink-0 items-center justify-center rounded-full bg-radial-[at_50%_0%] from-background to-background/0 text-primary shadow-[0_-2.5px_4px_0_oklch(1_0_0_/_15%)_inset] sm:size-20"
@@ -59,17 +62,21 @@ export const WhyChoose = () => {
             </div>
             <div>
               <p className="text-end font-medium font-mono text-4xl text-primary leading-none sm:text-5xl">
-                <strong>2,500+</strong>
+                <strong>
+                  <NumberCounter suffix="+" value={2500} />
+                </strong>
               </p>
               <h3 className="text-right font-light text-muted-foreground text-sm sm:text-base">
                 Businesses served across the globe
               </h3>
             </div>
           </li>
-          <li className="flex items-center justify-between rounded-3xl bg-linear-140 from-40% from-background to-110% to-primary-600 p-6 sm:p-7 md:p-8">
+          <li className="flex items-center justify-between rounded-3xl bg-linear-140 from-50% from-background to-120% to-primary-600 p-6 sm:p-7 md:from-40% md:to-110% md:p-8">
             <div>
               <p className="font-medium font-mono text-4xl text-primary leading-none sm:text-5xl">
-                <strong>150+</strong>
+                <strong>
+                  <NumberCounter suffix="+" value={150} />
+                </strong>
               </p>
               <h3 className="font-light text-muted-foreground text-sm sm:text-base">
                 Corporate training programs delivered
@@ -98,7 +105,7 @@ export const WhyChoose = () => {
           </p>
         </div>
       </div>
-      <div className="container relative z-10 grid gap-10 sm:gap-14 md:grid-cols-3 md:gap-20">
+      <div className="container relative z-10 grid gap-6 sm:gap-14 md:grid-cols-3 md:gap-20">
         <Badge>
           <BadgeDot /> Your business doctor
         </Badge>
