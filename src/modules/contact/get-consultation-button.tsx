@@ -11,12 +11,16 @@ import { FlickeringGrid } from "@/components/ui/flicker-grid";
 
 import { ContactForm } from "@/modules/contact/contact-form";
 
-export const GetConsultation = () => {
+interface Props {
+  text?: string;
+}
+
+export const GetConsultation = ({ text = "Get Consultation" }: Props) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button className="shrink-0">
-          Get Consultation
+          {text}
           <FlickeringGrid
             className="absolute inset-0 z-1 [mask-image:radial-gradient(120px_24px_at_top,white,transparent)]"
             color="#8c86f9"

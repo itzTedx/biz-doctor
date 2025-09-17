@@ -39,7 +39,7 @@ export function Navbar() {
 
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline">
+              <Button className="md:hidden" variant="outline">
                 <Menu />
               </Button>
             </SheetTrigger>

@@ -5,6 +5,8 @@ import { Decorative } from "@/components/layout/decorative";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+import { GetConsultation } from "../contact/get-consultation-button";
+
 export const Hero = () => {
   return (
     <div className="relative">
@@ -19,11 +21,12 @@ export const Hero = () => {
             strategies across industries.
           </p>
           <div className="mx-auto mt-6 flex w-fit items-center gap-3">
-            <Button asChild>
+            <GetConsultation text=" Book a Free Consultation" />
+            {/* <Button asChild>
               <Link aria-label="Book a free consultation with BizDoctor" href="#contact">
                 Book a Free Consultation
               </Link>
-            </Button>
+            </Button> */}
             <Button asChild variant="outline">
               <Link aria-label="Browse BizDoctor services" href="#services">
                 Our Services
