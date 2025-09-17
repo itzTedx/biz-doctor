@@ -18,13 +18,13 @@
   --color-primary-500: var(--primary-500);
   --color-primary-600: var(--primary-600);
   --color-primary-950: var(--primary-950);
- 
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  
+
   --color-muted: var(--muted);
   --color-muted-500: var(--muted-500);
   --color-muted-foreground: var(--muted-foreground);
@@ -99,7 +99,7 @@
   body {
     @apply bg-background text-foreground;
   }
-  
+
   p {
     @apply leading-relaxed -tracking-[0.02em];
   }
@@ -108,7 +108,6 @@
     @apply -tracking-[0.0165em];
   }
 }
-
 
 @utility container {
   margin-inline: auto;

@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Effects } from "@/components/animate-ui/primitives/effects/effect";
+import { Magnetic } from "@/components/animate-ui/primitives/effects/magnetic";
 import { Decorative } from "@/components/layout/decorative";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { TextEffect } from "@/components/ui/text-effect";
 
 import { GetConsultation } from "../contact/get-consultation-button";
 
@@ -13,25 +16,32 @@ export const Hero = () => {
       <header className="relative z-10 bg-card pt-12">
         <div className="container relative z-10 max-w-6xl space-y-4 pt-12 text-center">
           <Badge variant="secondary">Your business doctor</Badge>
-          <h1 className="text-balance font-bold font-sans text-3xl text-primary sm:text-4xl md:text-5xl lg:text-6xl">
+          <TextEffect
+            as="h1"
+            className="text-balance font-bold font-sans text-3xl text-primary sm:text-4xl md:text-5xl lg:text-6xl"
+            per="word"
+            preset="slide"
+          >
             Guiding Growth Through Finance, Marketing, Supply Chain & HR
-          </h1>
-          <p className="mx-auto max-w-3xl text-balance">
+          </TextEffect>
+
+          <TextEffect className="mx-auto max-w-3xl text-balance" delay={0.5} per="word" preset="fade">
             Empowering organizations with 30+ years of strategic consulting, tailored solutions, and sustainable growth
             strategies across industries.
-          </p>
+          </TextEffect>
+
           <div className="mx-auto mt-6 flex w-fit items-center gap-3">
-            <GetConsultation text=" Book a Free Consultation" />
-            {/* <Button asChild>
-              <Link aria-label="Book a free consultation with BizDoctor" href="#contact">
-                Book a Free Consultation
-              </Link>
-            </Button> */}
-            <Button asChild variant="outline">
-              <Link aria-label="Browse BizDoctor services" href="#services">
-                Our Services
-              </Link>
-            </Button>
+            <Effects blur delay={0.6} fade>
+              <Magnetic range={60}>
+                <GetConsultation text=" Book a Free Consultation" />
+              </Magnetic>
+
+              <Button asChild variant="outline">
+                <Link aria-label="Browse BizDoctor services" href="#services">
+                  Our Services
+                </Link>
+              </Button>
+            </Effects>
           </div>
           <Image alt="Hero" height={246} src="/images/background/hero-bizdoctor.svg" width={1052} />
         </div>

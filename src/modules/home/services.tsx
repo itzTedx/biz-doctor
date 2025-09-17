@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { Magnetic } from "@/components/animate-ui/primitives/effects/magnetic";
 import { Decorative } from "@/components/layout/decorative";
 import { Badge, BadgeDot } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -72,11 +73,13 @@ export const Services = () => {
         <Separator className="opacity-10" />
       </div>
       <Decorative className="relative z-10 mt-0" color="bg-background" position="down" roundClassName="bg-primary-950">
-        <Button asChild>
-          <Link aria-label="Talk to a BizDoctor expert" href="#contact">
-            Talk to an expert
-          </Link>
-        </Button>
+        <Magnetic range={80}>
+          <Button asChild>
+            <Link aria-label="Talk to a BizDoctor expert" href="#contact">
+              Talk to an expert
+            </Link>
+          </Button>
+        </Magnetic>
       </Decorative>
     </section>
   );

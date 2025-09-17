@@ -25,6 +25,7 @@ export const WhyChoose = () => {
             <Badge variant="secondary">Future-Ready Solutions</Badge>
             <p className="text-muted-foreground text-sm">- Built on trust, driven by results</p>
           </div>
+
           <p className="text-balance text-xl leading-relaxed sm:text-2xl md:text-3xl lg:text-4xl">
             At BizDoctor, we go beyond consultancy — we become your partner in growth. Our team brings decades of
             expertise, innovative thinking, and proven results to help businesses thrive in today’s competitive
