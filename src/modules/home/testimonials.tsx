@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Badge, BadgeDot } from "@/components/ui/badge";
 
 import { IconStar } from "@/assets/icons/star";
@@ -18,7 +20,9 @@ export const Testimonials = () => {
       </div>
       <div className="grid grid-cols-1 gap-8 py-20 md:grid-cols-3">
         <div className="space-y-8 rounded-xl bg-gradient-to-b from-card/20 to-card p-8">
-          <div className="size-12 rounded-full bg-accent" />
+          <div className="relative size-12 overflow-hidden rounded-full bg-accent">
+            <Image alt="avatar" className="object-cover" fill src="/images/avatar/avatar-2.webp" />
+          </div>
           <div className="space-y-4">
             <p className="text-xl">
               “BizDoctor completely transformed our financial strategy. Their team simplified complex processes and
@@ -33,7 +37,9 @@ export const Testimonials = () => {
           </div>
         </div>
         <div className="space-y-8 rounded-xl bg-gradient-to-t from-card/20 to-card p-8">
-          <div className="size-12 rounded-full bg-accent" />
+          <div className="relative size-12 overflow-hidden rounded-full bg-accent">
+            <Image alt="avatar" className="object-cover" fill src="/images/avatar/avatar-3.webp" />
+          </div>
           <div className="space-y-4">
             <p className="text-xl">
               “We were struggling with supply chain inefficiencies until BizDoctor stepped in. Their roadmap improved
@@ -48,7 +54,9 @@ export const Testimonials = () => {
           </div>
         </div>
         <div className="space-y-8 rounded-xl bg-gradient-to-b from-card/20 to-card p-8">
-          <div className="size-12 rounded-full bg-accent" />
+          <div className="relative size-12 overflow-hidden rounded-full bg-accent">
+            <Image alt="avatar" className="object-cover" fill src="/images/avatar/avatar-4.webp" />
+          </div>
           <div className="space-y-4">
             <p className="text-xl">
               What sets BizDoctor apart is their personalized approach. They don’t just consult—they partner with you to

@@ -152,7 +152,8 @@ export const Footer = () => {
           width={1920}
         />
       </div>
-      <div className="-translate-1/2 absolute inset-0 top-0 left-1/2 z-0 size-[28rem] rounded-full bg-radial from-accent/50 to-80% to-primary-background/60 opacity-60 blur-3xl md:size-[42rem]" />
+      <div className="-translate-1/2 absolute inset-0 top-0 left-1/2 z-0 size-[28rem] rounded-full bg-radial from-accent/50 to-80% to-primary-background/60 opacity-80 blur-3xl md:size-[42rem]" />
+      <div className="-translate-x-1/2 absolute bottom-0 left-1/2 z-0 size-[28rem] translate-y-1/2 rounded-full bg-radial from-card/15 to-80% to-primary-background/0 blur-3xl md:size-[42rem]" />
     </footer>
   );
 };

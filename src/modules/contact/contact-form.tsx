@@ -34,8 +34,8 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form className="relative z-10 space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="space-y-6">
+      <form className="relative z-10 @max-md:space-y-4 space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="@max-md:space-y-4 space-y-6">
           <FormField
             control={form.control}
             name="name"
@@ -110,7 +110,7 @@ export function ContactForm() {
             We respect your privacy and will never share your information.
           </p>
         </div>
-        <Button className="h-12 gap-3 pr-2" size="lg" type="submit">
+        <Button className="@max-md:h-10 h-12 gap-3 pr-2" size="lg" type="submit">
           Send Message
           <div className="flex size-8 items-center justify-center rounded bg-primary-300 text-primary-950">
             <IconArrowUpRight />
