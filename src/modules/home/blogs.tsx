@@ -24,9 +24,9 @@ export const Blogs = () => {
             </p>
           </div>
         </div>
-        <div className="relative z-10 grid grid-cols-3 gap-4">
-          <div className="col-span-2 grid grid-cols-2 overflow-hidden rounded-xl">
-            <div className="relative size-full bg-muted-foreground">
+        <div className="relative z-10 grid gap-6 md:grid-cols-3 md:gap-8">
+          <div className="grid overflow-hidden rounded-xl md:col-span-2 md:grid-cols-2">
+            <div className="relative size-full bg-muted-foreground max-md:aspect-5/3">
               <Image
                 alt="5 Strategies to Optimize Your Business Cash Flow"
                 className="object-cover"
