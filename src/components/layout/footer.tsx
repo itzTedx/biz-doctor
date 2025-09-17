@@ -14,7 +14,8 @@ import { LogoMono } from "@/assets/logo";
 import { FooterLeft, FooterRight, FooterUpLeft, FooterUpRight } from "@/assets/pattern/footer-pattern";
 import { LogoZironMedia } from "@/assets/zironmedia-logo";
 
-import { Button } from "../ui/button";
+import { GetConsultation } from "@/modules/contact/get-consultation-button";
+
 import { FlickeringGrid } from "../ui/flicker-grid";
 import { Decorative } from "./decorative";
 
@@ -43,7 +44,7 @@ export const Footer = () => {
           <p className="max-w-xl text-balance text-center text-base text-muted-500 sm:text-lg md:text-xl">
             Work with consultants who combine decades of experience with modern innovation.
           </p>
-          <Button>Talk to Our Experts Today</Button>
+          <GetConsultation text="Talk to Our Experts Today" />
         </section>
         <section className="grid grid-cols-1 gap-8 py-16 md:grid-cols-2 md:gap-6">
           <div className="flex flex-col items-center gap-6 md:items-start">

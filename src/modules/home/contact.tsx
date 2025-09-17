@@ -13,7 +13,7 @@ export const Contact = () => {
   return (
     <section className="py-20" id="contact">
       <div className="container grid grid-cols-1 gap-12 lg:grid-cols-2">
-        <div className="flex flex-col justify-between py-6">
+        <div className="sticky top-16 flex h-fit flex-col gap-9 py-6">
           <div className="space-y-6">
             <Badge>
               <BadgeDot />
