@@ -6,7 +6,7 @@ import { IconStar } from "@/assets/icons/star";
 
 export const Testimonials = () => {
   return (
-    <section className="container">
+    <section className="container max-md:pt-12">
       <div className="space-y-4 text-center">
         <Badge>
           <BadgeDot />
@@ -18,7 +18,7 @@ export const Testimonials = () => {
           <span>Authentic Voices</span>
         </h2>
       </div>
-      <div className="grid grid-cols-1 gap-8 py-20 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 py-9 sm:py-12 md:grid-cols-3 md:py-20">
         <div className="space-y-8 rounded-xl bg-gradient-to-b from-card/20 to-card p-8">
           <div className="relative size-12 overflow-hidden rounded-full bg-accent">
             <Image alt="avatar" className="object-cover" fill src="/images/avatar/avatar-2.webp" />

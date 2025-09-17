@@ -12,8 +12,8 @@ export const Blogs = () => {
       <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-950" />
       <div className="-translate-x-1/2 -top-1/2 absolute left-1/2 size-[46rem] rounded-full bg-radial from-accent/50 to-70% to-primary-background/0" />
 
-      <div className="container space-y-12 py-12 md:py-16 lg:py-20">
-        <div className="relative z-10 grid gap-20 md:grid-cols-3">
+      <div className="container space-y-6 py-12 md:space-y-12 md:py-16 lg:py-20">
+        <div className="relative z-10 grid gap-6 sm:gap-12 md:grid-cols-3 md:gap-20">
           <Badge>
             <BadgeDot /> On our minds
           </Badge>

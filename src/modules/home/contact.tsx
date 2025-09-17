@@ -11,9 +11,9 @@ import { ContactForm } from "../contact/contact-form";
 
 export const Contact = () => {
   return (
-    <section className="py-20" id="contact">
+    <section className="py-9 sm:py-12 md:py-20" id="contact">
       <div className="container grid grid-cols-1 gap-12 lg:grid-cols-2">
-        <div className="sticky top-16 flex h-fit flex-col gap-9 py-6">
+        <div className="flex h-fit flex-col gap-9 py-6 md:sticky md:top-16">
           <div className="space-y-6">
             <Badge>
               <BadgeDot />

@@ -8,9 +8,9 @@ import { FAQS } from "@/data/faqs";
 
 export const Faq = () => {
   return (
-    <section className="py-20">
+    <section className="py-9 sm:py-12 md:py-20">
       <div className="container grid grid-cols-1 gap-4 lg:grid-cols-12">
-        <div className="sticky top-16 h-fit space-y-6 lg:col-span-5">
+        <div className="h-fit space-y-6 md:sticky md:top-16 lg:col-span-5">
           <Badge>
             <BadgeDot />
             Frequently Asked Questions

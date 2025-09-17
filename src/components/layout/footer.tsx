@@ -22,9 +22,9 @@ import { Decorative } from "./decorative";
 export const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-primary-950 text-background">
-      <Decorative className="relative z-10" color="bg-background" roundClassName="bg-primary-950" />
+      <Decorative className="relative z-10 mt-0" color="bg-background" roundClassName="bg-primary-950" />
       {/* <CardPattern aria-hidden={true} className="-translate-x-1/2 absolute top-12 left-1/2 size-[40rem]" /> */}
-      <div className="container relative z-10 max-w-7xl px-0">
+      <div className="container relative z-10 max-w-7xl md:px-0">
         <section className="flex flex-col items-center gap-4 py-16 md:py-28 lg:py-40">
           <h4 className="font-bold text-3xl sm:text-4xl md:text-5xl">Begin Your Growth Journey</h4>
           <ul className="flex flex-wrap items-center justify-center gap-3 rounded bg-card/10 px-2.5 py-1.5 sm:gap-4">
@@ -46,8 +46,8 @@ export const Footer = () => {
           </p>
           <GetConsultation text="Talk to Our Experts Today" />
         </section>
-        <section className="grid grid-cols-1 gap-8 py-16 md:grid-cols-2 md:gap-6">
-          <div className="flex flex-col items-center gap-6 md:items-start">
+        <section className="grid grid-cols-1 gap-8 py-6 sm:py-12 md:grid-cols-2 md:gap-6 md:py-16">
+          <div className="flex items-center gap-6 max-md:justify-between md:flex-col md:items-start">
             <LogoMono />
             <ul className="flex items-center gap-1 rounded-md bg-muted/10 p-1">
               <li>
@@ -84,7 +84,7 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col gap-10 md:flex-row md:gap-20">
+          <div className="flex gap-14 max-md:flex-wrap md:gap-20">
             <div className="space-y-6">
               <h5 className="font-mono font-semibold text-background/80 text-xs tracking-wide">COMPANY</h5>
               <ul className="space-y-3">
@@ -137,10 +137,10 @@ export const Footer = () => {
           </Link>
         </section>
       </div>
-      <FooterLeft aria-hidden={true} className="absolute bottom-0 left-0" />
-      <FooterRight aria-hidden={true} className="absolute right-0 bottom-0" />
-      <FooterUpRight aria-hidden={true} className="-top-24 absolute right-0" />
-      <FooterUpLeft aria-hidden={true} className="-top-14 absolute left-0" />
+      <FooterLeft aria-hidden={true} className="absolute bottom-0 left-0 hidden md:block" />
+      <FooterRight aria-hidden={true} className="-right-10 -bottom-6 absolute hidden md:block" />
+      <FooterUpRight aria-hidden={true} className="-top-24 absolute right-0 hidden md:block" />
+      <FooterUpLeft aria-hidden={true} className="-top-14 absolute left-0 hidden md:block" />
       <div className="absolute top-0 left-0 h-[300px] w-full md:h-[600px]">
         <FlickeringGrid
           className="inset-0 z-1 [mask-image:radial-gradient(350px_circle_at_top,white,transparent)] md:[mask-image:radial-gradient(450px_circle_at_top,white,transparent)]"
