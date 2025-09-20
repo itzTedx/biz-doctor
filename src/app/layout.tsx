@@ -50,6 +50,9 @@ export const metadata: Metadata = {
       "30+ years of strategic consulting in finance, marketing, supply chain, and HR. Trusted by 2,500+ businesses.",
     images: ["/images/background/hero-bizdoctor-og.webp"],
   },
+  verification: {
+    google: "fJLqp0O3UhBf-F_FWWls7nBvZ3oSjBo7OIKc7G3aWxM",
+  },
   metadataBase: new URL(BASE_URL),
 };
 
