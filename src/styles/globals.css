@@ -40,7 +40,7 @@
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
 
-  --shadow-brand-lg:var(--brand-lg);
+  --shadow-brand-lg: var(--brand-lg);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -84,12 +84,12 @@
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
 
-  --brand-lg: 
+  --brand-lg:
     0 1px 1px 0 oklch(0.4034 0.2596 267.98 / 15%),
     0 3px 3px -1px oklch(0.4034 0.2596 267.98 / 13%),
     0 6px 4px -1.5px oklch(0.4034 0.2596 267.98 / 10%),
     0 10px 6px -2px oklch(0.4034 0.2596 267.98 / 6%),
-    0 16px 8px -2px oklch(0.4034 0.2596 267.98 / 2%); 
+    0 16px 8px -2px oklch(0.4034 0.2596 267.98 / 2%);
 }
 
 @layer base {
@@ -104,7 +104,13 @@
     @apply leading-relaxed -tracking-[0.02em];
   }
 
-  h1, h2, h3, h4, h5, h6, a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
     @apply -tracking-[0.0165em];
   }
 }
@@ -141,9 +147,7 @@
 }
 
 .framework-line {
-  offset-path: path(
-    "M 1 0 v 5 q 0 5 5 5 h 39 q 5 0 5 5 v 71 q 0 5 5 5 h 39 q 5 0 5 5 v 20"
-  );
+  offset-path: path("M 1 0 v 5 q 0 5 5 5 h 39 q 5 0 5 5 v 71 q 0 5 5 5 h 39 q 5 0 5 5 v 20");
 }
 
 @keyframes frameworkline-animation-path {
