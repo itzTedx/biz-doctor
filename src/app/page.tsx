@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-import { About, Blogs, Contact, Faq, Hero, Services, Testimonials, Videos, WhyChoose } from "@/modules/home";
+import { About, Blogs, Contact, Faq, Hero, Services, Testimonials, WhyChoose } from "@/modules/home";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
 
       <About />
 
-      <Videos />
+      {/* <Videos /> */}
 
       <Services />
 
