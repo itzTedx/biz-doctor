@@ -41,53 +41,69 @@ const ABOUT_CARDS = [
 
 export const About = () => {
   return (
-    <section className="relative py-6 md:py-12">
+    <section aria-labelledby="about-heading" className="relative py-6 md:py-12">
       <div className="container py-6 md:py-12">
         <div className="relative z-10 grid gap-6 md:grid-cols-3 md:gap-20">
-          <Badge>
-            <BadgeDot /> Your business doctor
+          <Badge aria-label="Company tagline" role="banner">
+            <BadgeDot aria-hidden="true" /> Your business doctor
           </Badge>
           <div className="space-y-4 md:col-span-2">
-            <h2 className="text-balance font-semibold text-5xl text-primary">
+            <h2 className="text-balance font-semibold text-5xl text-primary" id="about-heading">
               Your Trusted Partner in <span className="font-normal tracking-tight">Business Transformation</span>
             </h2>
             <p className="max-w-xl text-lg text-muted-foreground">
-              Led by Mr. Saji Thomas, a seasoned financial strategist and visionary leader, BizDoctor combines proven
-              expertise with forward-thinking strategies to solve complex business challenges.
+              Led by <strong>Mr. Saji Thomas</strong>, a seasoned financial strategist and visionary leader, BizDoctor
+              combines proven expertise with forward-thinking strategies to solve complex business challenges.
             </p>
           </div>
-          <div className="relative flex aspect-square items-end justify-end rounded-xl bg-card p-4 md:aspect-3/4">
-            <Badge className="z-10" variant="secondary">
+          <figure className="relative flex aspect-square items-end justify-end rounded-xl bg-card p-4 md:aspect-3/4">
+            <Badge aria-label="Leadership" className="z-10" variant="secondary">
               Saji Thomas
             </Badge>
             <Image
-              alt="Portrait of Mr.Saji Thomas"
+              alt="Portrait of Mr. Saji Thomas, Founder and CEO of BizDoctor, a seasoned financial strategist and business transformation expert"
               className="object-cover max-md:object-top"
               fill
+              priority={false}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               src="/images/saji-thomas.webp"
             />
-          </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:col-span-2">
+          </figure>
+          <div
+            aria-labelledby="services-heading"
+            className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:col-span-2"
+            role="region"
+          >
+            <h3 className="sr-only" id="services-heading">
+              Our Core Services and Expertise
+            </h3>
             {ABOUT_CARDS.map((card) => (
-              <div
+              <article
+                aria-labelledby={`${card.id}-title`}
                 className={`group flex flex-col justify-between gap-4 rounded-xl bg-card p-6 ${card.wrapperExtraClassName ?? ""}`.trim()}
                 key={card.id}
               >
-                <h3 className={card.h3ClassName}>{card.title}</h3>
+                <h4 className={card.h3ClassName} id={`${card.id}-title`}>
+                  {card.title}
+                </h4>
 
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-muted-foreground text-xs">{card.description}</p>
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded bg-primary-500 text-card transition-colors duration-300 ease-in-out group-hover:bg-primary-background group-hover:text-primary-300">
-                    <IconArrowUpRight />
-                  </div>
+                  <button
+                    aria-label={`Learn more about ${card.title}`}
+                    className="flex size-8 shrink-0 items-center justify-center rounded bg-primary-500 text-card transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 group-hover:bg-primary-background group-hover:text-primary-300"
+                    type="button"
+                  >
+                    <IconArrowUpRight aria-hidden="true" />
+                  </button>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </div>
 
-      <AnimatedAboutPattern className="absolute top-12 hidden md:block" />
+      <AnimatedAboutPattern aria-hidden="true" className="absolute top-12 hidden md:block" />
     </section>
   );
 };

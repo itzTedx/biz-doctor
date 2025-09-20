@@ -22,6 +22,7 @@ export function ContactForm() {
       email: "",
       phone: "",
       subject: "",
+      message: "",
     },
   });
 
@@ -34,18 +35,31 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form className="relative z-10 @max-md:space-y-4 space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
+      <form
+        aria-label="Contact form"
+        className="relative z-10 @max-md:space-y-4 space-y-8"
+        noValidate
+        onSubmit={form.handleSubmit(onSubmit)}
+      >
         <div className="@max-md:space-y-4 space-y-6">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel required>Name</FormLabel>
+                <FormLabel htmlFor="name" required>
+                  Name
+                </FormLabel>
                 <FormControl>
-                  <Input placeholder="Your name" {...field} />
+                  <Input
+                    id="name"
+                    placeholder="Your name"
+                    {...field}
+                    aria-describedby="name-error"
+                    autoComplete="name"
+                  />
                 </FormControl>
-                <FormMessage />
+                <FormMessage id="name-error" />
               </FormItem>
             )}
           />
@@ -55,62 +69,89 @@ export function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel required>Email Address</FormLabel>
+                <FormLabel htmlFor="email" required>
+                  Email Address
+                </FormLabel>
                 <FormControl>
-                  <Input placeholder="We’ll reply here" {...field} />
+                  <Input
+                    id="email"
+                    placeholder="We'll reply here"
+                    type="email"
+                    {...field}
+                    aria-describedby="email-error"
+                    autoComplete="email"
+                  />
                 </FormControl>
-                <FormMessage />
+                <FormMessage id="email-error" />
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone Number</FormLabel>
+                <FormLabel htmlFor="phone">Phone Number</FormLabel>
                 <FormControl>
-                  <Input placeholder="+971 58 765 4321" {...field} />
+                  <Input
+                    id="phone"
+                    placeholder="+971 58 765 4321"
+                    type="tel"
+                    {...field}
+                    aria-describedby="phone-error"
+                    autoComplete="tel"
+                  />
                 </FormControl>
-                <FormMessage />
+                <FormMessage id="phone-error" />
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
             name="subject"
             render={({ field }) => (
               <FormItem>
-                <FormLabel required>Subject</FormLabel>
+                <FormLabel htmlFor="subject" required>
+                  Subject
+                </FormLabel>
                 <FormControl>
-                  <Input placeholder="+971 58 765 4321" {...field} />
+                  <Input id="subject" placeholder="What's this about?" {...field} aria-describedby="subject-error" />
                 </FormControl>
-                <FormMessage />
+                <FormMessage id="subject-error" />
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel required>Message</FormLabel>
+                <FormLabel htmlFor="message" required>
+                  Message
+                </FormLabel>
                 <FormControl>
                   <Textarea
                     className="min-h-[12ch]"
+                    id="message"
                     placeholder="Share your goals or questions with our experts…"
                     {...field}
+                    aria-describedby="message-error message-help"
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage id="message-error" />
               </FormItem>
             )}
           />
-          <p className="font-light text-muted-500 text-sm">
+
+          <p className="font-light text-muted-500 text-sm" id="message-help" role="note">
             We respect your privacy and will never share your information.
           </p>
         </div>
-        <Button className="@max-md:h-10 h-12 gap-3 pr-2" size="lg" type="submit">
+
+        <Button aria-describedby="submit-help" className="@max-md:h-10 h-12 gap-3 pr-2" size="lg" type="submit">
           Send Message
           <div className="flex size-8 items-center justify-center rounded bg-primary-300 text-primary-950">
             <IconArrowUpRight />
@@ -126,6 +167,10 @@ export function ContactForm() {
             width={400}
           />
         </Button>
+
+        <div className="sr-only" id="submit-help">
+          Click to send your message. We'll respond within 24 hours.
+        </div>
       </form>
     </Form>
   );

@@ -11,6 +11,7 @@ export type PresetType = "blur" | "fade-in-blur" | "scale" | "fade" | "slide";
 export type PerType = "word" | "char" | "line";
 
 export type TextEffectProps = {
+  id?: string;
   children: string;
   per?: PerType;
   as?: keyof React.JSX.IntrinsicElements;
@@ -188,6 +189,7 @@ export function TextEffect({
   variants,
   className,
   preset = "fade",
+  id,
   delay = 0,
   speedReveal = 1,
   speedSegment = 1,
@@ -241,6 +243,7 @@ export function TextEffect({
           animate="visible"
           className={className}
           exit="exit"
+          id={id}
           initial="hidden"
           onAnimationComplete={onAnimationComplete}
           onAnimationStart={onAnimationStart}
